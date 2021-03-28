@@ -1,0 +1,50 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<!-- Your personal package -->
+	<groupId>me.coley.recaf.plugin</groupId>
+	<artifactId>batch-decompile</artifactId>
+	<version>1.2.0</version>
+	<name>Batch Decompile</name>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+	<!-- Additional repo's -->
+	<repositories>
+		<!-- 3rd party repo, analyzer -->
+		<repository>
+			<id>jitpack.io</id>
+			<url>https://jitpack.io</url>
+		</repository>
+		<!-- 3rd party repo, Forge -->
+		<repository>
+			<id>forge</id>
+			<url>http://files.minecraftforge.net/maven</url>
+		</repository>
+		<!-- 3rd party repo, mirror -->
+		<repository>
+			<id>mirrors</id>
+			<url>https://github.com/Col-E/jdk-tools-mirror/raw/master/repository/</url>
+		</repository>
+	</repositories>
+	<!-- Dependencies, most are inferred by Recaf's own dependency list -->
+	<dependencies>
+		<dependency>
+		    <groupId>com.github.Col-E</groupId>
+		    <artifactId>Recaf</artifactId>
+		    <version>2.18.3</version>
+			<scope>compile</scope> <!-- Do not bundle into fatJar -->
+		</dependency>
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.7.0</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
