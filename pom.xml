@@ -32,7 +32,7 @@
 		    <groupId>com.github.Col-E</groupId>
 		    <artifactId>Recaf</artifactId>
 		    <version>2.18.3</version>
-			<scope>compile</scope> <!-- Do not bundle into fatJar -->
+		    <scope>provided</scope> <!-- Do not bundle into fatJar -->
 		</dependency>
 	</dependencies>
 	<build>
