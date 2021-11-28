@@ -14,6 +14,7 @@ import me.coley.recaf.control.gui.GuiController;
 import me.coley.recaf.decompile.Decompiler;
 import me.coley.recaf.decompile.fernflower.FernFlowerDecompiler;
 import me.coley.recaf.ui.controls.ExceptionAlert;
+import me.coley.recaf.util.EscapeUtil;
 import me.coley.recaf.util.LangUtil;
 import me.coley.recaf.util.Log;
 import me.coley.recaf.util.UiUtil;
@@ -128,7 +129,7 @@ public class DecompilePanel extends BorderPane {
 		long start = System.currentTimeMillis();
 		try {
 			String decompiled = decompiler.decompile(name);
-			classSources.put(name, decompiled);
+			classSources.put(name, EscapeUtil.unescapeUnicode(decompiled));
 			decompileTimes.add(System.currentTimeMillis() - start);
 			updateProgressUI();
 		} catch (Exception ex) {
